@@ -14,7 +14,7 @@ public class Task03 {
         System.out.print("Give the third number:");
         int third = Integer.parseInt(scanner.nextLine());
 
-        float sum = first+second+third; //convert to float to get the average
+        double sum = first+second+third; //convert to double to get the average
 
         System.out.printf("\nThe sum of numbers is %s", (first+second+third));
 
