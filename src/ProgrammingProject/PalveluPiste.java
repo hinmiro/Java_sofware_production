@@ -8,6 +8,7 @@ public class PalveluPiste {
     private static LinkedList<Asiakas> jono = new LinkedList<>();
     private static Random rand = new Random();
     private String name;
+    private long average;
 
     public PalveluPiste(String name) {
         this.name = name;
@@ -19,6 +20,7 @@ public class PalveluPiste {
     }
 
     void poistaJonosta(Asiakas a) {
+            average += a.kulutettuAika();
             System.out.printf("\nAsiakkaan kulutettuaika %s", a.kulutettuAika());
     }
 
@@ -43,5 +45,7 @@ public class PalveluPiste {
             kassa.lisaaJonoon(new Asiakas());
         }
         kassa.palvele();
+        System.out.printf("\nKeskimääräinen kulutettu aika: %s", kassa.average/16);
+
     }
 }
