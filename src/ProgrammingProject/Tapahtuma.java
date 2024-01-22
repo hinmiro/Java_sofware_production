@@ -1,15 +1,20 @@
 package ProgrammingProject;
+
 import java.util.Random;
-public class Tapahtuma implements Comparable<Tapahtuma>{
-    private static Random rand = new Random();
-    private String name;
-    private long time;
-    public Tapahtuma(String name){
-        int randomTime = rand.nextInt(10000)+1;
+
+public class Tapahtuma implements Comparable<Tapahtuma> {
+    private static final Random rand = new Random();
+    private final String name;
+    private final long time;
+
+    public Tapahtuma(String name) {
+        int randomTime = rand.nextInt(10000) + 1;
         this.name = name;
-        this.time = System.currentTimeMillis()+randomTime;
+        this.time = System.currentTimeMillis() + randomTime;
     }
-    public String getName() { return name;
+
+    public String getName() {
+        return name;
     }
 
     public long getTime() {
