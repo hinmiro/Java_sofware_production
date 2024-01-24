@@ -8,7 +8,7 @@ public class CarDriver {
         myCar = new Car2("Ferrari");
         myCar.fillTank();
 
-        for(int i = 0; i < 6; i++) {
+     /*   for(int i = 0; i < 6; i++) {
             myCar.accelerate();
             System.out.println(myCar.getTypeName() + ": speed is " + myCar.getSpeed() + " km/h");
         }
@@ -16,7 +16,7 @@ public class CarDriver {
         while(myCar.getSpeed() > 0) {
             myCar.decelerate(15);
             System.out.println(myCar.getTypeName() + ": speed is " + myCar.getSpeed() + " km/h");
-        }
+        } */
 
         myCar.cruiseControl();
     }

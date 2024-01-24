@@ -25,10 +25,11 @@ public class Car2 {
 
 
     public void cruiseControl() {
+        System.out.println("::Cruise control engaged::");
         float amount;
         int userChoice;
         while (turnOn()) {
-            System.out.println("\nCruisecontrol engaged\n1 Set target\n2 read current target\n3 Turn cruisecontrol on/off");
+            System.out.println("\n1 Set target\n2 read current target\n3 Turn cruisecontrol on/off");
             userChoice = Integer.parseInt(scanner.nextLine());
             if (userChoice == 1) {
                 System.out.println("Set target speed: ");
@@ -64,6 +65,8 @@ public class Car2 {
                                 System.out.println(typeName + ": speed is " + speed + " km/h");
                             }
                         }
+                    } else if (speed == targetSpeed) {
+                        System.out.println("You are at target speed");
                     }
                 }
                 turnOn();
