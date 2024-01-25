@@ -10,8 +10,8 @@ public class Tapahtuma implements Comparable<Tapahtuma> {
 
 
     public enum TapahtumanTyyppi {
-        Saapuminen,
-        Poistuminen
+        SAAPUMINEN,
+        POISTUMINEN
     }
 
     public Tapahtuma(String name, TapahtumanTyyppi type) {

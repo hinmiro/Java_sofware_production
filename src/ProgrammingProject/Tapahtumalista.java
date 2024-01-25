@@ -29,10 +29,10 @@ public class Tapahtumalista {
             System.out.println("1 Lisää listaan tapahtuma\n2 Poista seuraava tapahtuma listasta\n3 Tulosta lista");
             userInput = Integer.parseInt(scanner.nextLine());
             if (userInput == 1) {
-                tapahtumat.lisaaTapahtuma(new Tapahtuma("Event", Tapahtuma.TapahtumanTyyppi.Saapuminen));
+                tapahtumat.lisaaTapahtuma(new Tapahtuma("Event", Tapahtuma.TapahtumanTyyppi.SAAPUMINEN));
             } else if (userInput == 2) {
                 Tapahtuma seuraava = tapahtumat.seuraava();
-                seuraava.setType(Tapahtuma.TapahtumanTyyppi.Poistuminen);
+                seuraava.setType(Tapahtuma.TapahtumanTyyppi.POISTUMINEN);
                 String type = String.valueOf(seuraava.getType());
                 System.out.printf("Seuraava tapahtuma: %s\nTapahtuman aika: %s\nTapahtuman tyyppi: %s\n\n",
                         seuraava.getName(), seuraava.getTime(), type);

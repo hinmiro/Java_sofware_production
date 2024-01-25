@@ -85,7 +85,14 @@ public class GroceryListManager4 {
         manager.addItemWithQuantity("Apple", 4);
         manager.addItemWithQuantity("bread", 4);
         manager.displayAvailableItems();
-
+        System.out.println("\n\n");
+        ShoppingList list = new ShoppingList();
+        list.addItem("Apple");
+        list.addItem("Orange");
+        list.addItem("Grill");
+        list.addItem("Fork");
+        list.removeItem("Fork");
+        list.displayList();
 
 
 
