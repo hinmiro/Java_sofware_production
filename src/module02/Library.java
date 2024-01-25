@@ -49,6 +49,14 @@ public class Library {
         return available;
     }
 
+    public double getAverageBookRating() {
+        double averageRating = 0;
+        for (Book book : books) {
+            averageRating += book.getRating();
+        }
+        return averageRating/books.size();
+    }
+
     public static void main(String[] args) {
         Library oodi = new Library();
         Book book1 = new Book("The fellowship of the ring", "J.R.R. Tolkien", 1954);
@@ -58,15 +66,16 @@ public class Library {
         oodi.addBook(book2);
         oodi.addBook(book3);
         oodi.displayBooks();
-        oodi.findBooksByAuthor("J.R.R. Tolkien");
-        oodi.borrowBook("Two towers");
-        System.out.println("\n\n");
-        oodi.displayBooks();
-        oodi.returnBook(oodi.borrowedBooks.get(0));
-        System.out.println("\n\n");
-        oodi.displayBooks();
-        System.out.println("\n");
         System.out.printf("Is book available, %s", oodi.isBookAvailable("Two towers"));
+        System.out.println("\n\n");
+        double increment = 3;
+        for (Book book : oodi.books) {
+            book.addReview("Very nice book!");
+            book.setRating(increment++);
+        }
+        Book book = oodi.books.get(0);
+        book.addReview("Not so nice book");
+
 
 
     }
