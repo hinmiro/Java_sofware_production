@@ -16,7 +16,7 @@ public class AgeDistribution {
     void printerScores() {
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < scores[i].length; j++) {
-                System.out.println(scores[i][j] + " ");
+                System.out.print(scores[i][j] + " ");
             }
         }
     }
@@ -24,7 +24,7 @@ public class AgeDistribution {
     void printerStudents() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < ryhmaO[i].length; j++) {
-                System.out.println(ryhmaO[i][j] + " ");
+                System.out.print(ryhmaO[i][j] + " ");
             }
         }
     }
@@ -91,6 +91,8 @@ public class AgeDistribution {
         distr.studentRandomizer();
         System.out.println("\n\n");
         distr.printerStudents();
-
+        System.out.println(" ");
+        distr.randomizer();
+        distr.printerScores();
     }
 }
