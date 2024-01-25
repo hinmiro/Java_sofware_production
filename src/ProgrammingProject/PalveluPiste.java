@@ -15,8 +15,7 @@ public class PalveluPiste {
     }
 
     void lisaaJonoon(Asiakas a) {
-        Asiakas asiakas = new Asiakas();
-        jono.add(asiakas);
+        jono.add(a);
     }
 
     void poistaJonosta(Asiakas a) {
