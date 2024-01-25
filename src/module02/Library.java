@@ -41,6 +41,14 @@ public class Library {
         books.add(book);
     }
 
+    public boolean isBookAvailable(String title) {
+        boolean available = false;
+        for (Book book : books) {
+            available = book.getTitle().equals(title);
+        }
+        return available;
+    }
+
     public static void main(String[] args) {
         Library oodi = new Library();
         Book book1 = new Book("The fellowship of the ring", "J.R.R. Tolkien", 1954);
@@ -57,6 +65,9 @@ public class Library {
         oodi.returnBook(oodi.borrowedBooks.get(0));
         System.out.println("\n\n");
         oodi.displayBooks();
+        System.out.println("\n");
+        System.out.printf("Is book available, %s", oodi.isBookAvailable("Two towers"));
+
 
     }
 }
