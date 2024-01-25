@@ -57,6 +57,25 @@ public class Library {
         return averageRating/books.size();
     }
 
+    public Book getMostReviewedBook() {
+        Book mostRevieved = null;
+        int increment = 1;
+        for (Book book : books) {
+            ArrayList<String> revs = book.getReview();
+            if (increment < books.size()) {
+                ArrayList<String> revs2 = books.get(increment).getReview();
+                if (revs.size() > revs2.size()) {
+                    mostRevieved = book;
+                }
+                else {
+                    mostRevieved = books.get(increment);
+                }
+            }
+            increment++;
+        }
+        return mostRevieved;
+    }
+
     public static void main(String[] args) {
         Library oodi = new Library();
         Book book1 = new Book("The fellowship of the ring", "J.R.R. Tolkien", 1954);
@@ -75,6 +94,10 @@ public class Library {
         }
         Book book = oodi.books.get(0);
         book.addReview("Not so nice book");
+        System.out.println("\n");
+        System.out.printf("\nAverage book rating is %.2f", oodi.getAverageBookRating());
+        System.out.println("\n");
+        System.out.printf("Most reviewed book is %s", oodi.getMostReviewedBook().getTitle());
 
 
 
