@@ -4,8 +4,8 @@ public class Triangle extends Shape {
     double a, b;
 
 
-    public Triangle(double a, double b, String name) {
-        super(name);
+    public Triangle(double a, double b, String name, String color) {
+        super(name, color);
         this.a = a;
         this.b = b;
     }

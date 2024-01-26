@@ -2,8 +2,8 @@ package module03;
 
 public class Circle extends Shape{
     double radius;
-    public Circle(double radius, String name) {
-        super(name);
+    public Circle(double radius, String name, String color) {
+        super(name, color);
         this.radius = radius;
     }
     @Override

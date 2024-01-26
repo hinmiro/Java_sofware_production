@@ -3,8 +3,8 @@ package module03;
 public class Rectangle extends Shape {
     double a, b;
 
-    public Rectangle(double a, double b, String name) {
-        super(name);
+    public Rectangle(double a, double b, String name, String color) {
+        super(name, color);
         this.a = a;
         this.b = b;
     }
