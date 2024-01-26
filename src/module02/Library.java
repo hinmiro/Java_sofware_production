@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Library {
     private final ArrayList<Book> books = new ArrayList<>();
-    private final ArrayList<Book> borrowedBooks = new ArrayList<>();
+    private final ArrayList<User> allUsers = new ArrayList<>();
 
     public void addBook(Book book) {
         books.add(book);
@@ -27,18 +27,28 @@ public class Library {
         }
     }
 
-    public void borrowBook(String title) {
+    public void borrowBook(String title, String name) {
         for (Book book : books) {
             if (book.getTitle().equals(title)) {
                 books.remove(book);
-                borrowedBooks.add(book);
+                for (User user : allUsers) {
+                    if (user.getName().equals(name)) {
+                        user.borrowed.add(book);
+                    }
+                }
             }
         }
     }
 
-    public void returnBook(Book book) {
-        borrowedBooks.remove(book);
-        books.add(book);
+    public void returnBook(String title) {
+        for (User user : allUsers) {
+            ArrayList<Book> borrowed = user.getBorrowed();
+            for (Book book : borrowed) {
+                if (book.getTitle().equals(title)){
+                    books.add(book);
+                }
+            }
+        }
     }
 
     public boolean isBookAvailable(String title) {
@@ -76,6 +86,13 @@ public class Library {
         return mostRevieved;
     }
 
+    public void displayAllUsers() {
+        System.out.println("Displaying all users:");
+        for (User user : allUsers) {
+            System.out.println(user.getName());
+        }
+    }
+
     public static void main(String[] args) {
         Library oodi = new Library();
         Book book1 = new Book("The fellowship of the ring", "J.R.R. Tolkien", 1954);
@@ -98,7 +115,19 @@ public class Library {
         System.out.printf("\nAverage book rating is %.2f", oodi.getAverageBookRating());
         System.out.println("\n");
         System.out.printf("Most reviewed book is %s", oodi.getMostReviewedBook().getTitle());
-
+        System.out.println("\n\n\n");
+        User user1 = new User("Jack", 34);
+        oodi.allUsers.add(user1);
+        User user2 = new User("Jane", 26);
+        oodi.allUsers.add(user2);
+        oodi.displayAllUsers();
+        System.out.println("\n");
+        oodi.borrowBook("Two towers", "Jane");
+        oodi.displayBooks();
+        oodi.returnBook("Two towers");
+        System.out.println("\n");
+        oodi.displayBooks();
+        System.out.println("\n");
 
 
     }
