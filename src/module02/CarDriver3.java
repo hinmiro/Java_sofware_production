@@ -1,21 +1,21 @@
 package module02;
 
-public class CarDriver {
+public class CarDriver3 {
 
     public static void main(String[] args) {
-        Car3 myCar;
+        Car myCar;
 
-        myCar = new Car3("Ferrari");
+        myCar = new Car("Toyota Corolla");
+
         myCar.fillTank();
 
-     /*   for(int i = 0; i < 6; i++) {
+        for(int i = 0; i < 6; i++) {
             myCar.accelerate();
             System.out.println(myCar.getTypeName() + ": speed is " + myCar.getSpeed() + " km/h");
         }
 
         while(myCar.getSpeed() > 0) {
-            myCar.decelerate(15);
             System.out.println(myCar.getTypeName() + ": speed is " + myCar.getSpeed() + " km/h");
-        } */
+        }
     }
 }
