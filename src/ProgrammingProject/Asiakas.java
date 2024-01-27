@@ -8,20 +8,18 @@ public class Asiakas {
 
     public Asiakas() {
         this.id = latestId++;
-        this.start = setter();
-
     }
 
-    long getter() {
+    long getTime() {
         return System.currentTimeMillis();
     }
 
-    long setter() {
-        return System.currentTimeMillis();
+    public void setTime(long time) {
+        start = time;
     }
 
     public long kulutettuAika() {
-        this.end = getter();
+        this.end = getTime();
         return this.end - this.start;
     }
 }

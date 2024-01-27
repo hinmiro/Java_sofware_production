@@ -17,7 +17,7 @@ public class Tapahtuma implements Comparable<Tapahtuma> {
     public Tapahtuma(String name, TapahtumanTyyppi type) {
         int randomTime = rand.nextInt(10000) + 1;
         this.name = name;
-        this.time = System.currentTimeMillis() + randomTime;
+        this.time = System.currentTimeMillis();
         this.type = type;
     }
 
