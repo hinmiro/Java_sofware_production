@@ -5,5 +5,7 @@ public class KelloTesti {
         Kello KELLO = Kello.getINSTANCE();
         KELLO.setTime(6);
         System.out.println(KELLO.getTime());
+        KELLO.setTime(12);
+        System.out.println(KELLO.getTime());
     }
 }
