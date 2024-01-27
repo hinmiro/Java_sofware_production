@@ -1,6 +1,6 @@
 package ProgrammingProject;
 public class Kello {
-    private int time;
+    private long time;
     private static Kello INSTANCE = null;
     private Kello() {}
 
@@ -11,11 +11,11 @@ public class Kello {
         return INSTANCE;
     }
 
-    public int getTime() {
+    public long getTime() {
         return time;
     }
 
-    public void setTime(int newTime) {
+    public void setTime(long newTime) {
         time = newTime;
     }
 }

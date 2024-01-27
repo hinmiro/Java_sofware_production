@@ -1,10 +1,8 @@
 package ProgrammingProject;
 
-import java.util.Scanner;
 import java.util.PriorityQueue;
 
 public class Tapahtumalista {
-    private static final Scanner scanner = new Scanner(System.in);
     private static final PriorityQueue<Tapahtuma> lista = new PriorityQueue<>();
 
     public void lisaaTapahtuma(Tapahtuma tapahtuma) {
@@ -12,6 +10,9 @@ public class Tapahtumalista {
     }
 
     public Tapahtuma seuraava() {
+        if (isEmpty()) {
+            System.out.println("Lista on tyhjä");
+        }
         return lista.poll();
     }
 
@@ -19,8 +20,10 @@ public class Tapahtumalista {
         return lista.isEmpty();
     }
 
+    public PriorityQueue<Tapahtuma> getLista() {return lista;}
 
-    public static void main(String[] args) {
+
+ /*   public static void main(String[] args) {
         Tapahtumalista tapahtumat = new Tapahtumalista();
         boolean onGoing = true;
         int userInput;
@@ -47,6 +50,6 @@ public class Tapahtumalista {
         }
 
 
-    }
+    } */
 }
 
