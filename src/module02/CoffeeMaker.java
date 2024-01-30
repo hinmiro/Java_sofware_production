@@ -6,7 +6,7 @@ public class CoffeeMaker {
     private boolean onOff;
     private int amount;
     private String type;
-    private static Scanner scanner = new Scanner(System.in);
+    private final static Scanner scanner = new Scanner(System.in);
 
     public CoffeeMaker() {
 

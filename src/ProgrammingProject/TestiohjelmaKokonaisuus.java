@@ -7,7 +7,7 @@ public class TestiohjelmaKokonaisuus {
         Saapumisprosessi saapumisprosessi = new Saapumisprosessi();
         Tapahtumalista tapahtumalista = new Tapahtumalista();
         PalveluPiste pp = new PalveluPiste();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             saapumisprosessi.lisaaTapahtuma(tapahtumalista);
         }
         while (!tapahtumalista.isEmpty()) {
