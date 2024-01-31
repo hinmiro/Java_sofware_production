@@ -2,8 +2,6 @@ package module03.VechichleInterfaces;
 
 public abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
     String type, fuel;
-    double efficiency;
-
     public AbstractVehicle(String type, String fuel) {
         this.type = type;
         this.fuel = fuel;
