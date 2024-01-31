@@ -4,18 +4,18 @@ import java.util.LinkedList;
 
 public class Bus extends Car3 {
     private static int passangerId = 1;
-    private LinkedList<Passanger> passangers = new LinkedList<>();
+    private LinkedList<Passenger> passengers = new LinkedList<>();
     public Bus(String typeName) {
         super(typeName);
     }
 
     public void passangerEnter() {
-        passangers.add(new Passanger("Robert", passangerId++));
+        passengers.add(new Passenger("Robert", passangerId++));
 
     }
 
     public void passangerExit() {
-        Passanger obj = passangers.poll();
+        Passenger obj = passengers.poll();
         System.out.printf("\n%s, id: %s has left the bus.", obj.getName(), obj.getId());
     }
 

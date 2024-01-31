@@ -1,10 +1,10 @@
 package module02;
 
-public class Passanger {
+public class Passenger {
     private String name;
     private int id;
 
-    public Passanger(String name, int id) {
+    public Passenger(String name, int id) {
         this.name = name;
         this.id = id;
     }

@@ -1,12 +1,13 @@
-package module03;
+package module03.VechichleInterfaces;
 
-public class Motorcycle implements Vehicle {
-    private String type, fuel, color;
+public class Bus implements Vehicle {
+    private String type, fuel;
+    private int capacity;
 
-    public Motorcycle(String type, String fuel, String color) {
+    public Bus(String type, String fuel, int capacity) {
         this.type = type;
         this.fuel = fuel;
-        this.color = color;
+        this.capacity = capacity;
     }
     @Override
     public void start() {
@@ -20,6 +21,6 @@ public class Motorcycle implements Vehicle {
 
     @Override
     public String getInfo() {
-        return String.format("Type: %s\nFuel: %s\nColor: %s", this.type, this.fuel, this.color);
+        return String.format("Type: %s\nFuel: %s\nCapacity: %s", this.type, this.fuel, this.capacity);
     }
 }

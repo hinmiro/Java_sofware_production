@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.LinkedList;
 
 public class PalveluPiste {
+    private int asiakkaat = 0;
 
     private static LinkedList<Asiakas> jono = new LinkedList<>();
     private static Random rand = new Random();
@@ -14,6 +15,7 @@ public class PalveluPiste {
 
     void lisaaJonoon(Asiakas a) {
         jono.add(a);
+        asiakkaat++;
     }
 
     void poistaJonosta(Asiakas a) {
@@ -37,7 +39,7 @@ public class PalveluPiste {
     }
 
     public long getAverage() {
-        return average;
+        return average/asiakkaat;
     }
 
  /*   public static void main(String[] args) {

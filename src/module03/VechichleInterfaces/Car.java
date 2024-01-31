@@ -1,4 +1,4 @@
-package module03;
+package module03.VechichleInterfaces;
 
 public class Car implements Vehicle {
     private String type, fuel, color;
