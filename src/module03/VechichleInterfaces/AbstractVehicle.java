@@ -2,7 +2,7 @@ package module03.VechichleInterfaces;
 
 import module03.VechichleInterfaces.Vehicle;
 
-public abstract class AbstractVehicle implements Vehicle {
+public abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
     String type, fuel;
 
     public AbstractVehicle(String type, String fuel) {
@@ -18,6 +18,10 @@ public abstract class AbstractVehicle implements Vehicle {
 
     public void stop() {
         System.out.printf("%s is stopping...\n", this.type);
+    }
+
+    public void charge() {
+        System.out.println("You cant charge this vehicle");
     }
 
     @Override
