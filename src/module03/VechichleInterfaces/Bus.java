@@ -1,22 +1,11 @@
 package module03.VechichleInterfaces;
 
-public class Bus implements Vehicle {
-    private String type, fuel;
+public class Bus extends AbstractVehicle {
     private int capacity;
 
     public Bus(String type, String fuel, int capacity) {
-        this.type = type;
-        this.fuel = fuel;
+        super(type, fuel);
         this.capacity = capacity;
-    }
-    @Override
-    public void start() {
-        System.out.printf("%s is starting...\n", this.type);
-    }
-
-    @Override
-    public void stop() {
-        System.out.printf("%s is stopping...\n", this.type);
     }
 
     @Override

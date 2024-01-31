@@ -1,4 +1,4 @@
-package module03;
+package module03.VechichleInterfaces;
 
 import module03.VechichleInterfaces.Vehicle;
 
@@ -11,18 +11,17 @@ public abstract class AbstractVehicle implements Vehicle {
     }
 
 
-    @Override
+
     public void start() {
         System.out.printf("%s is starting...\n", this.type);
     }
 
-    @Override
     public void stop() {
         System.out.printf("%s is stopping...\n", this.type);
     }
 
     @Override
     public String getInfo() {
-        return String.format("Type: %s\nFuel: %s\nColor: %s\n");
+        return String.format("Type: %s\nFuel: %s\n", this.type, this.fuel);
     }
 }
