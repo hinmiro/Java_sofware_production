@@ -25,5 +25,7 @@ public class VehicleDemo {
         System.out.println("\n");
         em.charge();
         car.charge();
+        System.out.println(car.efficiencyCalculator(340,26));
+        System.out.println(tesla.efficiencyCalculator(600, 132));
     }
 }

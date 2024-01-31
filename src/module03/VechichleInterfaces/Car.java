@@ -12,4 +12,5 @@ public class Car extends AbstractVehicle {
     public String getInfo() {
         return String.format("Type: %s\nFuel: %s\nColor: %s", this.type, this.fuel, this.color);
     }
+
 }

@@ -17,4 +17,9 @@ public class ElectricMotorcycle extends AbstractVehicle {
         System.out.println("Vehicle is charging...");
     }
 
+    @Override
+    public String efficiencyCalculator(double distance, double consumption) {
+        return String.format("Electric consumption is %.2f kW/km", distance/consumption);
+    }
+
 }
