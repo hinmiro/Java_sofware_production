@@ -18,7 +18,7 @@ public abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
     }
 
     public void charge() {
-        System.out.println("You cant charge this vehicle");
+        System.out.println("Vehicle is charging...");
     }
 
     @Override

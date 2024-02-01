@@ -12,4 +12,9 @@ public class Bus extends AbstractVehicle {
     public String getInfo() {
         return String.format("Type: %s\nFuel: %s\nCapacity: %s", this.type, this.fuel, this.capacity);
     }
+
+    @Override
+    public void charge(){
+        System.out.println("You cant charge this vehicle");
+    }
 }

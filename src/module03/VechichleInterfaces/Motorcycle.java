@@ -7,6 +7,11 @@ public class Motorcycle extends AbstractVehicle {
         super(type, fuel);
         this.color = color;
     }
+
+    @Override
+    public void charge(){
+        System.out.println("You cant charge this vehicle");
+    }
     public String getInfo() {
         return String.format("Type: %s\nFuel: %s\nColor: %s", this.type, this.fuel, this.color);
     }
