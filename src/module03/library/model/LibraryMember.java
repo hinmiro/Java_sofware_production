@@ -7,6 +7,7 @@ public class LibraryMember {
     private static int idIncrement;
     private int id;
     private ArrayList<Book> borrowedBooks = new ArrayList<>();
+    private ArrayList<Book> reservedBooks = new ArrayList<>();
 
     public LibraryMember(String name) {
         this.name = name;
@@ -27,5 +28,17 @@ public class LibraryMember {
 
     public void removeBook(Book book) {
         borrowedBooks.remove(book);
+    }
+
+    public void reserveBook(Book book) {
+        reservedBooks.add(book);
+    }
+
+    public ArrayList<Book> getReservedBooks() {
+        return reservedBooks;
+    }
+
+    public void cancelReservation(Book book) {
+        reservedBooks.remove(book);
     }
 }

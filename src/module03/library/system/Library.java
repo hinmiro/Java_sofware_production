@@ -45,4 +45,41 @@ public class Library {
             toBeReturned.clear();
         }
     }
+
+    public void reserveBook(String title, String member) {
+        for (LibraryMember m : members) {
+            if (m.getName().equals(member)) {
+                for (Book b : books) {
+                    if (b.getTitle().equals(title)) {
+                        b.reserve(member);
+                        m.reserveBook(b);
+                    }
+                }
+            }
+        }
+
+    }
+
+    public void cancelReservation(String title, String member) {
+        for (LibraryMember m : members) {
+            if (m.getName().equals(member)) {
+                for (Book b : books) {
+                    if (b.getTitle().equals(title)) {
+                        b.cancelReserve(member);
+                        m.cancelReservation(b);
+                    }
+                }
+            }
+        }
+    }
+
+    public void displayReservedBooks() {
+        for (LibraryMember m : members) {
+            ArrayList<Book> resb = m.getReservedBooks();
+            System.out.printf("\n%s reserved books:\n", m.getName());
+            for (Book b : resb) {
+                System.out.printf("%s\n", b.getTitle());
+            }
+        }
+    }
 }
