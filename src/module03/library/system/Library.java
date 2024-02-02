@@ -1,7 +1,5 @@
 package module03.library.system;
 
-import java.util.Scanner;
-
 import module03.library.model.Book;
 import module03.library.model.LibraryMember;
 
@@ -10,8 +8,6 @@ import java.util.ArrayList;
 public class Library {
     ArrayList<LibraryMember> members = new ArrayList<>();
     ArrayList<Book> books = new ArrayList<>();
-    Scanner scan = new Scanner(System.in);
-
 
     public void addBook(String title, String author) {
         books.add(new Book(title, author));
@@ -22,6 +18,7 @@ public class Library {
     }
 
     public void borrowBooks(String borrower, String book) {
+        System.out.printf("\n%s borrowed %s", borrower, book);
         for (Book b : books) {
             if (b.getTitle().equals(book)) {
                 books.remove(b);
@@ -37,12 +34,15 @@ public class Library {
     public void returnBooks(String title) {
         for (LibraryMember m : members) {
             ArrayList<Book> borrowed = m.getBooks();
+            ArrayList<Book> toBeReturned = new ArrayList<>();
             for (Book b : borrowed) {
                 if (b.getTitle().equals(title)) {
+                    System.out.printf("\n%s returned %s", m.getName(), b.getTitle());
                     books.add(b);
-                    m.removeBook(b);
+                    toBeReturned.add(b);
                 }
             }
+            toBeReturned.clear();
         }
     }
 }
