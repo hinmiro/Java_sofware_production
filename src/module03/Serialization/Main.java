@@ -12,7 +12,7 @@ public class Main {
 
         try (
                 FileOutputStream outputStream = new FileOutputStream(FILENAME);
-                ObjectOutputStream objects = new ObjectOutputStream(outputStream);) {
+                ObjectOutputStream objects = new ObjectOutputStream(outputStream)) {
             objects.writeObject(enrollSt1);
         } catch (Exception e) {
             System.err.print(e);
@@ -21,7 +21,7 @@ public class Main {
         if (f.exists() && f.isFile()) {
             try (
                     FileInputStream inputStream = new FileInputStream(FILENAME);
-                    ObjectInputStream objects = new ObjectInputStream(inputStream);) {
+                    ObjectInputStream objects = new ObjectInputStream(inputStream)) {
                     enrollSt1 = (Enrollment) objects.readObject();
             } catch (Exception e) {
                 System.err.print(e);
