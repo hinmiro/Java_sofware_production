@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.util.ArrayList;
 
-public class FobonacciCsv {
+public class FibonacciCsv {
     static ArrayList<BigInteger> sequence = new ArrayList<>();
 
     public static void main(String[] args) {
