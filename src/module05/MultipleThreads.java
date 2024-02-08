@@ -1,7 +1,7 @@
 package module05;
 
 
-public class Main {
+public class MultipleThreads {
 
     public static void main(String[] args) {
         Runnable thread1 = new NumCounter(true);
