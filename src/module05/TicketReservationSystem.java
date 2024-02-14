@@ -27,6 +27,7 @@ public class TicketReservationSystem {
             try {
                 t.join();
             } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -37,17 +38,14 @@ class Customer implements Runnable {
     public static Random rand = new Random();
 
     private static int increment = 1;
-    private int id;
-    private TicketReservationSystem ticketReservationSystem;
+    private final int id;
+    private final TicketReservationSystem ticketReservationSystem;
 
     public Customer(TicketReservationSystem t) {
         this.ticketReservationSystem = t;
         this.id = increment++;
     }
 
-    public int getId() {
-        return this.id;
-    }
 
     @Override
     public void run() {
